@@ -1,4 +1,5 @@
 from main import BooksCollector
+import pytest
 
 # класс TestBooksCollector объединяет набор тестов, которыми мы покрываем наше приложение BooksCollector
 # обязательно указывать префикс Test
@@ -38,8 +39,6 @@ class TestBooksCollector:
             assert collector.get_book_rating('Гордость и предубеждение и зомби') == 9
 
         # Проверка добавления рейтинга для одной книги больше 1 и меньше 10
-        import pytest
-
         @pytest.mark.parametrize('positive_rating', [1, 5, 10])
         def test_set_book_rating_add_new_rating_for_one_book_value_from_one_to_ten(self, collector, positive_rating):
             collector.set_book_rating('Что делать, если ваш кот хочет вас убить', positive_rating)
