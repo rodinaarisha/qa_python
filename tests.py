@@ -21,7 +21,7 @@ class TestBooksCollector:
     def test_get_book_rating_check_rating_nine(self, collector):
         collector.set_book_rating('Что делать, если ваш кот хочет вас убить', 9)
         collector.get_book_rating('Что делать, если ваш кот хочет вас убить')
-        assert collector.books_rating.get('Что делать, если ваш кот хочет вас убить') == 9
+        assert collector.get_book_rating('Что делать, если ваш кот хочет вас убить') == 9
 
     @pytest.mark.parametrize('positive_rating', [1, 5, 10])
     def test_set_book_rating_add_new_rating_for_one_book_value_from_one_to_ten(self, collector, positive_rating):
