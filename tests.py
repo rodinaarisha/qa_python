@@ -39,7 +39,7 @@ class TestBooksCollector:
 
     def test_get_books_with_specific_rating_getting_a_book_with_a_rating_of_9(self, collector):
         collector.get_books_with_specific_rating(9)
-        assert list(collector.books_rating.keys())[list(collector.books_rating.values()).index(9)] == 'Гордость и предубеждение и зомби'
+        assert collector.get_books_with_specific_rating(9) == ['Гордость и предубеждение и зомби']
 
     def test_get_books_rating_getting_books(self, collector):
         collector.add_new_book('Горе от Ума')
