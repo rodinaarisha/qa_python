@@ -42,7 +42,10 @@ class TestBooksCollector:
         assert list(collector.books_rating.keys())[list(collector.books_rating.values()).index(9)] == 'Гордость и предубеждение и зомби'
 
     def test_get_books_rating_getting_books(self, collector):
-        assert len(collector.get_books_rating()) == 2
+        collector.add_new_book('Горе от Ума')
+        collector.add_new_book('Анна Каренина')
+        collector.get_books_rating()
+        assert len(collector.books_rating) == 4
 
     def test_add_book_in_favorites_add_one_book_in_favorites(self, collector):
         collector.add_book_in_favorites('Гордость и предубеждение и зомби')
