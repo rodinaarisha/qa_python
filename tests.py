@@ -19,7 +19,9 @@ class TestBooksCollector:
         assert len(collector.get_books_rating()) == 2
 
     def test_get_book_rating_check_rating_nine(self, collector):
-        assert collector.get_book_rating('Гордость и предубеждение и зомби') == 9
+        collector.set_book_rating('Что делать, если ваш кот хочет вас убить', 9)
+        collector.get_book_rating('Что делать, если ваш кот хочет вас убить')
+        assert collector.books_rating.get('Что делать, если ваш кот хочет вас убить') == 9
 
     @pytest.mark.parametrize('positive_rating', [1, 5, 10])
     def test_set_book_rating_add_new_rating_for_one_book_value_from_one_to_ten(self, collector, positive_rating):
