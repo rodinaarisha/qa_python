@@ -31,7 +31,7 @@ class TestBooksCollector:
     @pytest.mark.parametrize('rating', [0, 11])
     def test_set_book_rating_add_new_rating_for_one_book_less_1_and_more_ten(self, collector, rating):
         collector.set_book_rating('Что делать, если ваш кот хочет вас убить', rating)
-        assert collector.books_rating['Что делать, если ваш кот хочет вас убить'] == 1
+        assert collector.get_book_rating('Что делать, если ваш кот хочет вас убить') == 1
 
     def test_set_book_rating_add_rating_for_a_non_existent_book(self, collector):
         collector.set_book_rating('Война и Мир', 5)
