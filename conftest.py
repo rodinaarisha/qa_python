@@ -4,7 +4,7 @@ import pytest
 from main import BooksCollector
 
 
-@pytest.fixture(scope="function")  # Добавление fixture где добавлены две книги в словарь, плюс книга для избранного
+@pytest.fixture
 def collector():
     collector = BooksCollector()
     collector.add_new_book('Гордость и предубеждение и зомби')
